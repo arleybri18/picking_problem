@@ -34,4 +34,11 @@ RSpec.describe Article do
 
     expect(recommendations).to eq([790952, 103678, 802358, 562873])
   end
+
+  it "should return number recomendations sended" do
+    data = JSON.parse(json_file_3)
+    recommendations = Article.new(data).recommendations(2)
+
+    expect(recommendations).to eq([103678, 790952])
+  end
 end

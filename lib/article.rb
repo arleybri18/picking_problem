@@ -3,13 +3,13 @@ class Article
     @data = data
   end
 
-  def recommendations
+  def recommendations(num = 4)
     arrays = @data.values
     result = []
 
-    4.times do
+    num.times do
       arrays.each do |array|
-        result << array.shift['token'].to_i if !array.empty? && result.size < 4
+        result << array.shift['token'].to_i if !array.empty? && result.size < num
       end
     end
     result
