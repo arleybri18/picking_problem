@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 require 'json'
 
+# Class for save and manipulate articles data.
+# Provide method that return recommendations using Round-Robin approach
 class Article
   attr_accessor :data
 
@@ -20,6 +24,7 @@ class Article
   end
 
   private
+
   def sanitize_data(data)
     data.is_a?(Hash) ? data : JSON.parse(data)
   end
